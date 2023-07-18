@@ -30,7 +30,7 @@ if (isset($_FILES['file'])) {
         $newFileName = $randomNumber . '_' . $file['name'];
 
         // 移動檔案到上傳目錄
-        if (move_uploaded_file($file['tmp_name'], $uploadDirectory . $newFileName)) {
+        if (@move_uploaded_file($file['tmp_name'], $uploadDirectory . $newFileName)) {
             echo 'SUCCESS~檔案上傳成功！';
         } else {
             echo 'Error: 檔案上傳失敗.';
